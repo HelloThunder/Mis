@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    echo "You are logged out";
+    header('Location:../../login\studentLogin\LOGINPAGE.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style_profile.css">
+    <style>
+     body{
+        background-image: url("../../img3.jpg");
+        background-repeat: no-repeat ;
+        background-size: 100%;
+        /* min-width: 99%; */
+        /* min-height:  */
+        /* background-image: ; */
+       
+    }</style>
 </head>
 <body>
     <div class="container">
@@ -31,7 +48,7 @@
                             Profile
                         </li>
                         </a>
-                        <a href="#" class="logout">
+                        <a href="../../login\studentLogin\logout.php" class="logout">
                             <li id="nav4">
                             LogOut
                         </li>
@@ -59,16 +76,21 @@ if(!$conn){
 }
 else{
 
-    echo "Connection was Succcessful"."<br>";
+    // echo "Connection was Succcessful"."<br>";
 }
 
-
-$sql = "select Id,Name,Branch,Sem,Dob,Gender,Mobile ,Email,Address,State,Country from `student` WHERE Id=1800723";
+if( isset( $_GET['id'])) {
+    $_SESSION['id'] =  $_GET['id']; 
+     // $id = $_GET['id']; 
+     // $id =$_GET['id'];
+  } 
+  $id =$_SESSION['id'];
+$sql = "select * from student WHERE Id= '$id'";
 $result = mysqli_query($conn , $sql);
 
 
 if($result){
-    echo " succesfully" . "<br>";
+    // echo " succesfully" . "<br>";
 
 }
 else{

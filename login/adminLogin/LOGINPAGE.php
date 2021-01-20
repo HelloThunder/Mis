@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Admin Login Page</title>
 </head>
 <style>
     body{
@@ -66,16 +66,17 @@
     <?php
     // require 'process.php';
     ?>
+    
     <div id="frm">
         <form action="process.php" method="POST">
-            <span>LOGIN</span>
+            <span>ADMIN LOGIN</span>
             <p>
-                <label for="">Email:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                <input type="text" id="user" name="user" >
+                <label for="">Email:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                <input type="text" id="user" name="user" value="son@gmail.com" >
             </p>
             <p>
                 <label for="">Password:</label>
-                <input type="password" id="pass" name="pass" >
+                <input type="password" id="pass" name="pass" value="123">
             </p>
             <p>
                 <input type="submit" id="btn" value="Submit">

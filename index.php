@@ -10,7 +10,7 @@
     <div class="container">
         <ul class="lis">
             <a href="./login/adminLogin/LOGINPAGE.php" style="text-decoration:none "><button >ADMIN</button></a> 
-            <a href="#"><button>TEACHER</button></a>
+            <a href="./login/teacherLogin/LOGINPAGE.php"><button>TEACHER</button></a>
             <a href="./login/studentLogin/LOGINPAGE.php"><button>STUDENT</button></a>
         </ul>
     </div>

@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style_profile.css">
+    <style>
+     body{
+        background-image: url("../../img3.jpg");
+        background-repeat: no-repeat ;
+        background-size: 100%;
+        /* min-width: 99%; */
+        /* min-height:  */
+        /* background-image: ; */
+     }
+       </style>
 </head>
 <body>
     <div class="container">
@@ -43,7 +53,7 @@
    
     <?php
 
-
+session_start();
 //connecting to the db
 $servername = "localhost";
 $username = "root";
@@ -59,16 +69,22 @@ if(!$conn){
 }
 else{
 
-    echo "Connection was Succcessful"."<br>";
+    // echo "Connection was Succcessful"."<br>";
 }
 
+if( isset( $_GET['id'])) {
+    $_SESSION['id'] =  $_GET['id']; 
+     // $id = $_GET['id']; 
+     // $id =$_GET['id'];
+  } 
+  $id =$_SESSION['id'];
 
-$sql = "select * from `teacher` WHERE Id=1";
+  $sql = "select * from teacher WHERE Id= '$id'";
 $result = mysqli_query($conn , $sql);
 
 
 if($result){
-    echo " succesfully" . "<br>";
+    // echo " succesfully" . "<br>";
 
 }
 else{

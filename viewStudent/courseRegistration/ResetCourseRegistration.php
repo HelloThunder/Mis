@@ -1,0 +1,1 @@
+<!-- Update student set Course_Reg = CASE when Course_Reg = 1 then 0 else Course_Reg END -->

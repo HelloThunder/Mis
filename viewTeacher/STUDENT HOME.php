@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style_home.css">
+    <style>
+     body{
+        background-image: url("../img4.jpg");
+        background-repeat: no-repeat ;
+        background-size: 100%;
+        /* min-width: 99%; */
+        /* min-height:  */
+        /* background-image: ; */
+     }
+       </style>
 </head>
 <body>
     <div class="container">
@@ -40,9 +50,10 @@
             </ul>
         </nav>
     </div>
-    <?php
 
+<?php
 
+session_start();
 //connecting to the db
 $servername = "localhost";
 $username = "root";
@@ -58,16 +69,22 @@ if(!$conn){
 }
 else{
 
-    echo "Connection was Succcessful"."<br>";
+    // echo "Connection was Succcessful"."<br>";
 }
 
-
-$sql = "select Id,Name,Degree,Experience from `teacher` WHERE Id=1";
+if( isset( $_GET['id'])) {
+    $_SESSION['id'] =  $_GET['id']; 
+     // $id = $_GET['id']; 
+     // $id =$_GET['id'];
+  } 
+  $id =$_SESSION['id'];
+$sql = "select * from teacher WHERE Id= '$id'";
 $result = mysqli_query($conn , $sql);
 
 
 if($result){
-    echo " succesfully" . "<br>";
+    // echo " succesfully" . "<br>";
+
 
 }
 else{
@@ -86,6 +103,7 @@ if ($result->num_rows > 0) {
 //   $conn->close();
    ?>
     <!-- basic Info of student -->
+    <h1>Hello <?php echo $name ?> !!</h1>
     <div class="basicinfo" > 
          <p class="info"><b> ID: <?php echo $id ?></p>  </b>            
          <p class="info"><b> Name:  <?php echo $name ?></b></p>          

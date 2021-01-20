@@ -5,7 +5,8 @@ body{
    font-family: Arial, Helvetica, sans-serif;
    /* padding: 0.1vw; */
    /* margin: 0; */
-   background-color: rgb(250, 231, 170);
+   /* background-color: rgb(250, 231, 170); */
+   /* background-image: url("img.jpg"); */
   }
   *{
       text-decoration: none;
@@ -25,7 +26,7 @@ body{
     justify-content: center;
     padding: 0px;
 width: 100%;
-background-color: #dfdce3;
+background-color: #f7f3f2;
 border-radius: 10px;
 border-bottom-style: inset;
 }
@@ -74,6 +75,7 @@ li{
    background-color: #0e0c00e8;
    border-radius: 30px;
    color: whitesmoke;
+
 }
 #nav3{
     display:inline;
@@ -81,7 +83,7 @@ li{
     text-align: center;
     padding: 9px;
     color: rgb(13, 13, 14);
-   /* background-color: #ff7800e8; */
+   /* background-color: #ff7800e8 1px solid; */
    font-size: 2vw;
    background-color: #0e0c00e8;
    border-radius: 30px;
@@ -201,8 +203,8 @@ min-width: 100%;
 .stu{
     /* border: 2px solid red; */
     display: grid;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    border-radius: 2vw;
     
 }
 #stu{
@@ -210,40 +212,50 @@ min-width: 100%;
     display: grid;
     text-align: center;
     height: 11vw;
-    background-color: white;
+    border-radius: 2vw;
+    background-color: white;    font-family: 'Playfair Display', serif;
+
+    font-family: 'Signika', sans-serif;
 }
 .teac{
     /* border: 2px solid red; */
     display: grid;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
 }
 #teac{
     /* border: 2px solid red; */
     display: grid;
     text-align: center;
     height: 11vw;
-    background-color: white;
+    border-radius: 2vw;
+    background-color: white;    font-family: 'Playfair Display', serif;
+
+    font-family: 'Signika', sans-serif;
+
 }
 .cour{
     /* border: 2px solid red; */
     display: grid;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
 }
 #cour{
     /* border: 2px solid red; */
     display: grid;
     text-align: center;
     height: 11vw;
-    background-color: white;
+    border-radius: 2vw;
+    background-color: white;    font-family: 'Playfair Display', serif;
+
+    font-family: 'Signika', sans-serif;
 }
 button{
     /* border: 2px red solid; */
     height: 4vw;
-    border-radius:10px ;
+    border-radius:20px ;
     /* text-decoration: steelblue; */
 }
 span{
-    padding: 0.7vw;
+    padding: 1.7vw;
 }
 span a{
     text-transform: none;
@@ -251,33 +263,3 @@ span a{
 }
 
 /*::::::::::::*/
-.feed{
-    position: fixed;
-    right: 0px;
-    top: 263px;
-    background-image: linear-gradient(to left, rgb(24, 21, 226), rgba(156, 125, 241, 0.87));
-    border-radius: 60px 60px 60px 60px;
-    width: 341px;
-    text-align: center;
-    color: rgb(250, 246, 246);
-}
-.feed p{
-    padding: 1px 29px 0px 27px;
-    margin: 20px;
-}
-.feed:hover{
-    position: fixed;
-    right: 0px;
-    top: 263px;
-    background-image: linear-gradient(to right, rgba(253, 22, 22, 0.356), rgba(252, 7, 7, 0.87));
-    border-radius: 60px 60px 60px 60px;
-    width: 341px;
-    text-align: center;
-    color: rgb(253, 251, 251);
-    cursor: pointer;
-    
-}
-.feed a{
-    text-decoration: none;
-    color: rgb(250, 245, 245);
-}

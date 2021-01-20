@@ -218,7 +218,7 @@ require 'formCheck.php';
                                             <option disabled="disabled" selected="selected">GENDER</option>
                                             <option>Male</option>
                                             <option>Female</option>
-                                            <option>Other</option>
+                                           
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>

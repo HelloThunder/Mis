@@ -19,20 +19,20 @@ if(!$conn){
 }
 else{
 
-    echo "Connection was Succcessful"."<br>";
+    // echo "Connection was Succcessful"."<br>";
 }
 
 //varieble to be inserted into the table
 
 //SQL query to be executed
 
-$sql = "INSERT INTO `courses` (`COURSE_CODE`, `COURSE_NAME`, `DEPARTMENT_NO`,) VALUES ('CSU501', 'System Programming', '1','5')";
+$sql = "INSERT INTO `courses`(`COURSE_CODE`, `COURSE_NAME`, `DEPARTMENT_NO`, `SEMESTER`) VALUES ('$ccode', '$cname', '$dep','$sem')";
 
 $result = mysqli_query($conn,$sql);
 
 //Add a new trip  to the trip table in the database
 if($result){
-    echo "The record inserted succesfully" . "<br>";
+    // echo "The record inserted succesfully" . "<br>";
 
 }
 else{

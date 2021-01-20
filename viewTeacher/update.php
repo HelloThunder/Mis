@@ -1,6 +1,6 @@
 <?php
 
-include '../addStudent\formCheck.php';
+// include '../addStudent\formCheck.php';
 session_start();
 
 $servername = "localhost";
@@ -21,13 +21,12 @@ else{
     // echo "Connection was Succcessful"."<br>";
 }
 
-if( isset( $_GET['Id'])) {
-  $_SESSION['id'] =  $_GET['Id']; 
+if( isset( $_GET['id'])) {
+  $_SESSION['id'] =  $_GET['id']; 
    // $id = $_GET['id']; 
    // $id =$_GET['id'];
 } 
 $id =$_SESSION['id'];
-
 
 //  echo $_SESSION['id'];
 $sql = "select * from teacher where Id = '$id'";
@@ -46,20 +45,21 @@ $query = mysqli_fetch_assoc($result);
 if(isset($_POST['submit'])){
   
    
-    $name =test_input($_POST['name']);
-    $birth =test_input($_POST['birth']);
-    $gender =test_input($_POST['gender']);
-    $cast =test_input($_POST['cast']);
-    $category =test_input($_POST['category']);
-    $degree =test_input($_POST['degree']);
-    $mobile =test_input($_POST['mobile']);
-    $email =test_input($_POST['email']);
-    $address =test_input($_POST['address']);
-    $state =test_input($_POST['state']);
-    $country =test_input($_POST['country']);
-    $exp =test_input($_POST['exp']);
+    $name =($_POST['name']);
+    $birth =($_POST['birth']);
+    $gender =($_POST['gender']);
+    $cast =($_POST['cast']);
+    $category =($_POST['category']);
+    $degree =($_POST['degree']);
+    $mobile =($_POST['mobile']);
+    $email =($_POST['email']);
+    $address =($_POST['address']);
+    $state =($_POST['state']);
+    $country =($_POST['country']);
+    $exp =($_POST['exp']);
 //  echo var_dump($id);
-    $updatequery = "UPDATE `teacher` SET Name = '$name',Dob='$birth',Gender='$gender',Cast='$cast' ,Category= '$category',Degree='$degree',Mobile='$mobile',Email='$email',Address='$address',State='$state',Country='$country',Expirence = '$exp'  WHERE Id = '$id' ";
+echo $name;
+    $updatequery = "UPDATE `teacher` SET Name = '$name',Dob='$birth',Gender='$gender',Cast='$cast' ,Category= '$category',Mobile='$mobile',Email='$email',Address='$address',State='$state',Country='$country',Degree='$degree',Experience='$exp'  WHERE Id = '$id' ";
    //  UPDATE `student` SET `Name` = 'Rddd' WHERE `student`.`Id` = 1800707; 
    // `Dob`=`$birth`,`Gender`=`$gender`,`Cast`=`$cast ,`Category`= '$category',`Branch`='$branch',`Mobile`='$mobile',`Email`='$email',`Address`='$address',`State`='$state',`Country`='$country',`Sem`= '$sem' 
 $result = mysqli_query($conn,$updatequery);
@@ -68,6 +68,7 @@ if($result){
     $page = $_SERVER['ViewStudentByAdmin.php'];
     $sec = "0";
     header("Refresh: $sec; url=$page");
+    
    }
 // Add a new trip  to the trip table in the database
 if($result){
@@ -79,7 +80,10 @@ alert("The record has been inserted succesfully");
 }
 else{
 // echo " The record was not inserted succesfullybcoz of this error --->" . mysqli_error($conn);
-alert( " The record was not inserted succesfullybcoz of this error --->" . mysqli_error($conn));
+?>
+<script>
+alert( " The record was not inserted succesfullybcoz of this error --->" . mysqli_error($conn));</script>
+<?php
 }
 }
 ?>
@@ -297,6 +301,7 @@ alert( " The record was not inserted succesfullybcoz of this error --->" . mysql
                             <div class="col-2">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
+                                    
                                         <select name="gender" value="<?php echo $query['Gender']; ?>">
                                             <option disabled="disabled">GENDER</option>
                                             <option>Male</option>
@@ -358,14 +363,14 @@ alert( " The record was not inserted succesfullybcoz of this error --->" . mysql
                           <!-- Degree -->
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1 " type="text" placeholder="Degree" name="degree" value="<?php echo $query['Degree']; ?>">
+                                    <input class="input--style-1 " type="text" placeholder="DEGREE" name="degree" value="<?php echo $query['Degree']; ?>">
                                   
                                    </div>
                             </div>
-                            <!-- Sem -->
+                            <!-- EXP -->
                             <div class="col-2">
                                 <div class="input-group">
-                                <input class="input--style-1 " type="number" placeholder="Experience" name="exp" value="<?php echo $query['Experience']; ?>"  required>
+                                <input class="input--style-1 " type="number" placeholder="EXPIRENCE" name="exp" value="<?php echo $query['Experience']; ?>" >
                                 
                                         
                                     </div>

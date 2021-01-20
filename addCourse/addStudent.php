@@ -1,0 +1,57 @@
+<?php
+
+
+
+//connecting to the db
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "addstudent";
+
+//Create a connection
+$conn = mysqli_connect($servername, $username, $password, $database); //function returns true/false based on connection 
+
+//Die if connection was not successful
+if(!$conn){
+    die("Sorry we failed to connect: ".mysqli_connect_error());
+}
+else{
+
+    echo "Connection was Succcessful"."<br>";
+}
+
+//varieble to be inserted into the table
+
+//SQL query to be executed
+
+$sql = "INSERT INTO `courses` ( `Name`, `Dob`, `Gender`, `Cast`, `Category`, `Branch`, `Mobile`, `Email`, `Address`, `State`, `Country`, `Sem`) VALUES ( '$name', '$birth', '$gender', '$cast', ' $category', '$branch', '$mobile', '$email', '$address', '$state', '$country', '$sem')";
+// $insertInLogin ="INSERT INTO `studentlogin`(`Id`, `Username`, `Password`) VALUES ([value-1],'$email',[value-3])";
+
+$result = mysqli_query($conn,$sql);
+
+//Add a new trip  to the trip table in the database
+if($result){
+    echo "The record has been inserted succesfully" . "<br>";
+
+}
+else{
+    echo " The record was not inserted succesfullybcoz of this error --->" . mysqli_error($conn);
+}
+
+$a =" SELECT LAST_INSERT_ID()";
+$result = mysqli_query($conn,$a);
+$q = mysqli_fetch_assoc($result);
+
+$c =$q['LAST_INSERT_ID()'];
+
+$sql= "INSERT INTO `studentlogin`(`Id`, `Username`, `Password`) VALUES ('$c','$email','$c')";
+$result = mysqli_query($conn,$sql);
+if($result){
+        echo "succesfully" . "<br>";
+    
+    }
+    else{
+        echo " not inserted succesfullybcoz of this error --->" . mysqli_error($conn);
+    }
+
+?>

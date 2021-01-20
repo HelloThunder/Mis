@@ -1,3 +1,4 @@
+
 <?php
 function test_input($data) {
     $data = trim($data);
@@ -47,17 +48,19 @@ $result = mysqli_query($conn , $sql);
         echo "  not  bcoz of this error --->" . mysqli_error($conn);
     }
     $row = $result->fetch_assoc();
-    
+    $id=$row['Id'];
     if($row['Username']==$user && $row['Password']==$pass){
         echo " Login Success !!! Welcome ". $row['Username'];
+        header("Location:../../viewTeacher/STUDENT HOME.php?id=$id");
     }
     else{
-        echo "Failed to Login";
+        header("Location:LOGINPAGE.php");
+       
     }
 
 
     // Redirect browser 
-    header("Location:#"); 
+    
       
     exit; 
 

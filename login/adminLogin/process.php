@@ -35,8 +35,9 @@ $result = mysqli_query($conn , $sql);
     }
     $row = $result->fetch_assoc();
     
-    if($row['Username']==$user && $row['Password']==$pass){
+    if($row['Email']==$email && $row['Password']==$pass){
         echo " Login Success !!! Welcome ". $row['Username'];
+        
     }
     else{
         echo "Failed to Login";
@@ -44,7 +45,7 @@ $result = mysqli_query($conn , $sql);
 
 
     // Redirect browser 
-    header("Location:../../admin.php"); 
+    header("Location:../../admin.php");
       
     exit; 
 

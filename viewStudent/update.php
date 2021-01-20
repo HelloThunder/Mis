@@ -67,6 +67,7 @@ if($result){
     $page = $_SERVER['ViewStudentByAdmin.php'];
     $sec = "0";
     header("Refresh: $sec; url=$page");
+   
    }
 // Add a new trip  to the trip table in the database
 if($result){
@@ -272,7 +273,7 @@ alert( " The record was not inserted succesfullybcoz of this error --->" . mysql
             <div class="card card-1">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Add Student</h2>
+                    <h2 class="title">Update Student</h2>
                    
                  <form method="POST" action="">
                  <div>
